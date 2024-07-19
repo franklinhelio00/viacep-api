@@ -7,42 +7,7 @@ use Illuminate\Support\Facades\Http;
 
 class CepController extends Controller
 {
-    /**
-     * @OA\Get(
-     *     path="/search/local/{ceps}",
-     *     summary="Consulta múltiplos CEPs",
-     *     @OA\Parameter(
-     *         name="ceps",
-     *         in="path",
-     *         required=true,
-     *         @OA\Schema(
-     *             type="string"
-     *         ),
-     *         description="Lista de CEPs separados por vírgula"
-     *     ),
-     *     @OA\Response(
-     *         response=200,
-     *         description="Retorna os dados dos CEPs",
-     *         @OA\JsonContent(
-     *             type="array",
-     *             @OA\Items(
-     *                 type="object",
-     *                 @OA\Property(property="cep", type="string"),
-     *                 @OA\Property(property="label", type="string"),
-     *                 @OA\Property(property="logradouro", type="string"),
-     *                 @OA\Property(property="complemento", type="string"),
-     *                 @OA\Property(property="bairro", type="string"),
-     *                 @OA\Property(property="localidade", type="string"),
-     *                 @OA\Property(property="uf", type="string"),
-     *                 @OA\Property(property="ibge", type="string"),
-     *                 @OA\Property(property="gia", type="string"),
-     *                 @OA\Property(property="ddd", type="string"),
-     *                 @OA\Property(property="siafi", type="string")
-     *             )
-     *         )
-     *     )
-     * )
-     */
+
     public function search($ceps)
     {
         $cepsArray = explode(',', $ceps);
