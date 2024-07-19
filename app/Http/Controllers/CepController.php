@@ -13,8 +13,8 @@ class CepController extends Controller
         $results = [];
 
         foreach ($cepsArray as $cep) {
-        $response = Http::get("https://viacep.com.br/ws/{$cep}/json/"); // Ignore essa linha para desativar temporariamente a verificação do certificado SSL e ative a linha abaixo para conseguir testar em ambiente local
-        // $response = Http::withOptions(['verify' => false])->get("https://viacep.com.br/ws/{$cep}/json/");
+        // $response = Http::get("https://viacep.com.br/ws/{$cep}/json/"); // Ignore essa linha para desativar temporariamente a verificação do certificado SSL e ative a linha abaixo para conseguir testar em ambiente local
+        $response = Http::withOptions(['verify' => false])->get("https://viacep.com.br/ws/{$cep}/json/");
            if ($response->successful()) {
            $data = $response->json();
            $results[] = [
