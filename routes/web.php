@@ -1,5 +1,11 @@
 <?php
 
+use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CepController;
+
+Log::info('O arquivo routes/web.php foi carregado.');
+
 /**
  * @OA\Info(
  *     version="1.0.0",
@@ -14,10 +20,6 @@
  *     )
  * )
  */
-
-use Illuminate\Support\Facades\Route;
-
-use App\Http\Controllers\CepController;
 
 Route::get('/search/local/{ceps}', [CepController::class, 'search']);
 
