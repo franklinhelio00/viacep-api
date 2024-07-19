@@ -40,6 +40,8 @@ return [
                 */
                 'annotations' => [
                     base_path('app'),
+                    base_path('routes'),
+                    base_path('config'),
                 ],
 
             ],
