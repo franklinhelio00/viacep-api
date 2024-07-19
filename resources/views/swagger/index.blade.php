@@ -27,7 +27,7 @@
     <script>
         window.onload = function() {
             const ui = SwaggerUIBundle({
-                url: "{{ url('api/documentation') }}",
+                url: "{{ url('api-docs.json') }}", // Certifique-se de que está carregando HTTPS
                 dom_id: '#swagger-ui',
                 deepLinking: true,
                 presets: [
